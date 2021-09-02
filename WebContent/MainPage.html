@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <link rel="stylesheet" type="text/css" href="CSS.css">
+</head>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+function metafora() {
+	if(document.myform.type[0].checked == true)
+	  {
+	    document.myform.method="post";
+	    document.myform.action ="StudentServlet";
+	  }
+	  else
+	  if(document.myform.type[1].checked == true)
+	  {
+	    document.myform.method="post";
+	    document.myform.action ="ProfessorServlet";
+	  }
+	  else
+		  if(document.myform.type[2].checked == true)
+		  {
+			  document.myform.method="get";
+		    document.myform.action ="SecretaryServlet";
+		  }
+	  return true; 	
+}
+</script>
+
+<form method="post" class="logout" action="Logout.jsp">             
+      <button type="submit"  class="btn">Logout</button>    
+</form>
+      <img src="Background_image2.jpg"  width="460" height="345" >
+      <div  align="center">
+      <form name="myform"   onsubmit="return metafora(); ">             
+      <input type="radio" name="type" value="Student" ><em><b>Student</b></em>
+      <input type="radio" name="type" value="Professor"><em><b> Professor</b></em>
+      <input type="radio" name="type" value="Secretarian" checked><em><b>Secretarian</b></em><br>
+      <em style="color:black;"><b>Username</b></em><br>
+      <input type="text" placeholder="Enter Username" name="username" required><br>
+      <em style="color:black;"><b>Password</b></em><br>
+      <input type="password" placeholder="Enter Password" name="password" required><br>
+      <button type="submit"  class="btn">Login</button>    
+</form>
+</div>
+
+
+
+</body>
+</html>
